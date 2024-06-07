@@ -3,7 +3,7 @@ import styles from './DivisionStanding.module.css'
 
 function getInfo(team) {
     return (
-        <tr>
+        <tr key={team.name}>
             <td>{team.name}</td>
             <td>{`W: ${team.w}`}</td>
             <td>{`L: ${team.l}`}</td>
@@ -17,11 +17,11 @@ function DivisionStanding({data}) {
     return (
         <div className={styles.container}>
             <table>
-                <tr>
-                    <th>{data.div_name.split(" ").pop()}</th>
-                </tr>
+                <thead>
+                    <tr><th>{data.div_name.split(" ").pop()}</th></tr>
+                </thead>
                 {/* Defines a callback function that returns each team name in the array */}
-                {teams.map(getInfo)}
+                <tbody>{teams.map(getInfo)}</tbody>
             </table>
         </div>
     )
