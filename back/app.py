@@ -2,7 +2,6 @@ from flask import Flask
 from flask_cors import CORS
 from datetime import date
 import statsapi
-import json
 
 app = Flask(__name__)
 CORS(app)

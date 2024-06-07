@@ -32,8 +32,8 @@ function App() {
       {loading ? (
         <p></p>
       ) : (
-        <div>
-          <h1>Current MLB Standings</h1>
+        <div className="container">
+          <Schedule data={schedule}/>
           <div className="leagueContainer">
             <div className="league">
               <h2>American League</h2>
@@ -48,8 +48,6 @@ function App() {
               <DivisionStanding data={standings[203]} />
             </div>
           </div>
-          <h1>Today's Games</h1>
-          <Schedule data={schedule}/>
         </div>
       )}
     </div>

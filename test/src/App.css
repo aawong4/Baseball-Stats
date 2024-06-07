@@ -8,4 +8,9 @@
 
 .leagueContainer {
   display: flex;
+  flex: 1;
+}
+
+.container {
+  display:flex;
 }
