@@ -7,7 +7,7 @@ function getInfo(team) {
     return (
         <tr key={team.name}>
             <td>
-                <img src={teamLogos[team.name]}></img>
+                <img src={teamLogos[team.name]} className={styles.logo}></img>
                 {teamShortHand[team.name]}
             </td>
             <td>{team.w}</td>

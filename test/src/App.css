@@ -5,6 +5,7 @@
 
 .leagueContainer {
   flex: 1;
+  width: 65%;
 }
 
 .container {
