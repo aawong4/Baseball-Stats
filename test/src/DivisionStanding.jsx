@@ -12,7 +12,7 @@ function getInfo(team) {
             </td>
             <td>{team.w}</td>
             <td>{team.l}</td>
-            <td>{team.wp}</td>
+            <td>{(team.w / (team.w + team.l)).toFixed(3)}</td>
             <td>{team.gb}</td>
         </tr>
     )
@@ -24,7 +24,7 @@ function DivisionStanding({data}) {
         <div className={styles.container}>
             <table>
                 <thead>
-                    <tr><th>{data.div_name}</th></tr>
+                    <tr><th>{`${data.div_name.split(" ")[0][0]}${data.div_name.split(" ")[1][0]} ${data.div_name.split(" ")[2]}`}</th></tr>
                 </thead>
                 <tbody>
                     <td>Team</td>
