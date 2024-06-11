@@ -1,9 +1,6 @@
 #root {
   padding: 2rem;
-}
-
-.league {
-  flex: 1;
+  background-color: #F5F5F5;
 }
 
 .leagueContainer {
@@ -15,6 +12,6 @@
 }
 
 .scheduleContainer {
-  width: 30%;
+  width: 35%;
   margin: 10px;
 }

@@ -1,4 +1,15 @@
-table {
-    border: 1px solid black;
-    width: 100%;
+* {
+    font-weight: bold;
+}
+
+.container {
+    border-radius: 10px;
+    box-shadow: 0 0 3px lightgrey;
+    background-color: white;
+    display: flex;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    margin: 10px;
 }

@@ -8,7 +8,7 @@ function CurrentGame({data}) {
 
     useEffect(() => {
         const gameStatus = data.summary.split(" ").pop();
-        setGameStart(gameStatus === "(Pre-Game)" || gameStatus === "(Warmup)");
+        setGameStart(gameStatus === "(Pre-Game)" || gameStatus === "(Warmup)" || gameStatus === "(Scheduled)");
     }, [data]); // Dependency array ensures this effect runs only when `data` changes
 
     return (

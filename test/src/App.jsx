@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import DivisionStanding from './DivisionStanding';
+import LeagueStanding from './LeagueStanding';
 import Schedule from './Schedule'
 import './App.css'
 
@@ -34,18 +34,8 @@ function App() {
         <div className="container">
           <div className="leagueContainer">
             <h1>Standings</h1>
-            <div className="league">
-              <h2>American League</h2>
-              <DivisionStanding data={standings[201]} />
-              <DivisionStanding data={standings[202]} />
-              <DivisionStanding data={standings[200]} />
-            </div>
-            <div className="league">
-              <h2>National League</h2>
-              <DivisionStanding data={standings[204]} />
-              <DivisionStanding data={standings[205]} />
-              <DivisionStanding data={standings[203]} />
-            </div>
+            <LeagueStanding east={standings[201]} central={standings[202]} west={standings[200]}></LeagueStanding>
+            <LeagueStanding east={standings[204]} central={standings[205]} west={standings[203]}></LeagueStanding>
           </div>
           <div className="scheduleContainer">
             <Schedule data={schedule}/>
