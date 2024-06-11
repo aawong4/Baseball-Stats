@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import LeagueStanding from './LeagueStanding';
 import Schedule from './Schedule'
+import Header from './Header'
 import './App.css'
 
 function App() {
@@ -31,16 +32,19 @@ function App() {
       {loading ? (
         <p></p>
       ) : (
-        <div className="container">
-          <div className="leagueContainer">
-            <h1>Standings</h1>
-            <LeagueStanding east={standings[201]} central={standings[202]} west={standings[200]}></LeagueStanding>
-            <LeagueStanding east={standings[204]} central={standings[205]} west={standings[203]}></LeagueStanding>
+        <>
+          <Header></Header>
+          <div className="container">
+            <div className="leagueContainer">
+              <h1>Standings</h1>
+              <LeagueStanding east={standings[201]} central={standings[202]} west={standings[200]}></LeagueStanding>
+              <LeagueStanding east={standings[204]} central={standings[205]} west={standings[203]}></LeagueStanding>
+            </div>
+            <div className="scheduleContainer">
+              <Schedule data={schedule}/>
+            </div>
           </div>
-          <div className="scheduleContainer">
-            <Schedule data={schedule}/>
-          </div>
-        </div>
+        </>
       )}
     </div>
   );

@@ -1,18 +1,18 @@
 #root {
-  padding: 2rem;
   background-color: #F5F5F5;
-}
-
-.leagueContainer {
-  flex: 1;
-  width: 65%;
 }
 
 .container {
   display:flex;
 }
 
+
+.leagueContainer {
+  flex: 1;
+  width: 70%;
+}
+
 .scheduleContainer {
-  width: 35%;
+  width: 30%;
   margin: 10px;
 }
