@@ -34,6 +34,7 @@ function App() {
       ) : (
         <div className="container">
           <div className="leagueContainer">
+            <h1>Standings</h1>
             <div className="league">
               <h2>American League</h2>
               <DivisionStanding data={standings[201]} />

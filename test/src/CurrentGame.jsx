@@ -5,19 +5,19 @@ import teamLogos from './teamLogos'
 function CurrentGame({data}) {
     return (
         <div className={styles.container}>
-            <div>
-                <div className={styles.scores}>
+            <div className={styles.score}>
+                <div className={styles.teamName}>
                     <img src={teamLogos[data.away_name]}/>
                     <p>{data.away_name.split(" ").pop()}</p>
-                    <p>{data.away_score}</p>
                 </div>
-                <div className={styles.scores}>
+                <p>{`${data.away_score} - ${data.home_score}`}</p>
+                <div className={styles.teamName}>
                     <img src={teamLogos[data.home_name]}/>
                     <p>{data.home_name.split(" ").pop()}</p>
-                    <p>{data.home_score}</p>
                 </div>
-                
+                    
             </div>
+            
         </div>
     )
 }

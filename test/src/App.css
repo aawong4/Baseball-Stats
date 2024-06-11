@@ -1,6 +1,5 @@
 #root {
   padding: 2rem;
-  background-color: #FAF9F6;
 }
 
 .league {
@@ -8,7 +7,6 @@
 }
 
 .leagueContainer {
-  display: flex;
   flex: 1;
 }
 
