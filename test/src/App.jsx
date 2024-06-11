@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import DivisionStanding from './DivisionStanding';
 import Schedule from './Schedule'
 import './App.css'
-import json from 'json5';
 
 function App() {
   const [standings, setStandings] = useState(null);
