@@ -1,8 +1,9 @@
 import React from 'react';
+import CurrentGame from './CurrentGame'
 
 function game_data(game) {
     return (
-        <p key={game.game_id}>{game.summary.substring(13)}</p> //substring to cut off leading date
+        <CurrentGame data={game}></CurrentGame>
     );
 }
 
