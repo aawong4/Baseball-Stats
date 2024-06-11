@@ -33,7 +33,6 @@ function App() {
         <p></p>
       ) : (
         <div className="container">
-          <Schedule data={schedule}/>
           <div className="leagueContainer">
             <div className="league">
               <h2>American League</h2>
@@ -47,6 +46,9 @@ function App() {
               <DivisionStanding data={standings[205]} />
               <DivisionStanding data={standings[203]} />
             </div>
+          </div>
+          <div className="scheduleContainer">
+            <Schedule data={schedule}/>
           </div>
         </div>
       )}

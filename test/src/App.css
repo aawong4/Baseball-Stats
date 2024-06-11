@@ -15,3 +15,8 @@
 .container {
   display:flex;
 }
+
+.scheduleContainer {
+  width: 30%;
+  margin: 10px;
+}
