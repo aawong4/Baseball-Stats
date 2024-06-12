@@ -1,5 +1,19 @@
 .container {
     background-color: #041E42;
-    width: 100%;
-    height: 60px;
+    height: 56px;
+    color: white;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+}
+
+nav {
+    padding: 10px;
+}
+
+.right {
+    margin-left: auto;
 }
