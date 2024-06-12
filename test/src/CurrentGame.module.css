@@ -30,3 +30,8 @@ img {
     align-items: center;
     justify-content: center;
 }
+
+.scoreAndState {
+    margin: 0px;
+    text-align: center;
+}

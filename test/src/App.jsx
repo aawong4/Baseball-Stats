@@ -39,6 +39,7 @@ function App() {
               {/* <h1>Stat Leaders</h1> */}
               <h1>Standings</h1>
               <LeagueStanding east={standings[201]} central={standings[202]} west={standings[200]}></LeagueStanding>
+              <div style={{height: '20px'}}></div>
               <LeagueStanding east={standings[204]} central={standings[205]} west={standings[203]}></LeagueStanding>
             </div>
             <div className="scheduleContainer">
