@@ -4,7 +4,7 @@
     background-color: white;
     display: flex;
     padding: 10px;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     align-items: center;
     margin: 10px;
@@ -12,5 +12,10 @@
 }
 
 .logo {
-    height: 20px;
+    height: 15px;
+    width: 15px;
+}
+
+table {
+    width: 100%;
 }

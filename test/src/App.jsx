@@ -35,7 +35,8 @@ function App() {
         <>
           <Header></Header>
           <div className="container">
-            <div className="leagueContainer">
+            <div className="mainContentContainer">
+              {/* <h1>Stat Leaders</h1> */}
               <h1>Standings</h1>
               <LeagueStanding east={standings[201]} central={standings[202]} west={standings[200]}></LeagueStanding>
               <LeagueStanding east={standings[204]} central={standings[205]} west={standings[203]}></LeagueStanding>
