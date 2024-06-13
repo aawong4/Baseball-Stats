@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './DivisionStanding.module.css'
-import teamShortHand from './teamShortHand';
-import teamLogos from './teamLogos';
+import teamShortHand from '../teamShortHand';
+import teamLogos from '../teamLogos';
 
 function getInfo(team) {
     return (

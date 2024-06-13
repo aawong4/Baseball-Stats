@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './CurrentGame.module.css'
-import teamLogos from './teamLogos'
+import teamLogos from '../teamLogos'
 import { useState, useEffect } from 'react';
 
 function convertTime(time) {

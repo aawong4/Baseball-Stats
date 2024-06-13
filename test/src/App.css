@@ -18,3 +18,28 @@
   width: 30%;
   padding-right: 20px;
 }
+
+.header {
+  background-color: #041E42;
+  height: 56px;
+  color: white;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+nav {
+  padding-right: 30px;
+}
+
+.right {
+  margin-left: auto;
+}
