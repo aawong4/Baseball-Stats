@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import LeagueStanding from '../components/LeagueStanding';
+import PitchingStatLeaders from '../components/PitchingStatLeaders'
+import HittingStatLeaders from '../components/HittingStatLeaders'
 import Schedule from '../components/Schedule'
 
 
 function Home() {
     const [standings, setStandings] = useState(null);
     const [schedule, setScores] = useState(null);
+    const [stats, setStats] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -18,6 +21,9 @@ function Home() {
         fetch('http://localhost:5000/api/mlb/standings')
             .then(response => response.json())
             .then(data => setStandings(data)),
+        fetch('http://localhost:5000/api/mlb/stats')
+            .then(response => response.json())
+            .then(data => setStats(data)),
         ])
         .then(() => setLoading(false)) // Set loading to false after all fetches complete
         .catch(error => {
@@ -34,14 +40,17 @@ function Home() {
             <>
             <div className="container">
                 <div className="mainContentContainer">
-                {/* <h1>Stat Leaders</h1> */}
-                <h1>Standings</h1>
-                <LeagueStanding east={standings[201]} central={standings[202]} west={standings[200]}></LeagueStanding>
-                <div style={{height: '20px'}}></div>
-                <LeagueStanding east={standings[204]} central={standings[205]} west={standings[203]}></LeagueStanding>
+                    <h1>Standings</h1>
+                    <LeagueStanding east={standings[201]} central={standings[202]} west={standings[200]}></LeagueStanding>
+                    <div style={{height: '20px'}}></div>
+                    <LeagueStanding east={standings[204]} central={standings[205]} west={standings[203]}></LeagueStanding>
+                    <h1>Stat Leaders</h1>
+                    <PitchingStatLeaders data={stats}/>
+                    <div style={{height: '20px'}}></div>
+                    <HittingStatLeaders data={stats}/>
                 </div>
                 <div className="scheduleContainer">
-                <Schedule data={schedule}/>
+                    <Schedule data={schedule}/>
                 </div>
             </div>
             </>
