@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from "react";
 
 function Login() {
-    return (
-        <p>Login</p>
-    )
+  return (
+    <div>
+      Login
+      <button>Register</button>
+    </div>
+  );
 }
 
 export default Login;

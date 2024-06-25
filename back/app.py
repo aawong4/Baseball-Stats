@@ -4,10 +4,9 @@ from datetime import date
 import statsapi
 
 app = Flask(__name__)
+
 CORS(app)
 today = date.today()
-
-print(today.strftime('%d/%m/%Y'))
 
 @app.route('/api/mlb/standings', methods=['GET'])
 def get_mlb_standings():
