@@ -1,23 +1,51 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from datetime import date
 import statsapi
+import pymongo
 
+# Initialize Flask app
 app = Flask(__name__)
-
 CORS(app)
+
+# Initialize mongoDB database
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+db = myclient["mydatabase"]
+users = db["users"]
+predictions = db["predictions"]
+
+# Date for accessing schedule
 today = date.today()
 
+# Registration of new user, pushes new user info to mongoDB
+@app.route('/api/register', methods=["POST"])
+def register():
+    # Obtain user data from front
+    data = request.get_json()
+    username = data.get("username")
+    password = data.get("password")
+
+    # Insert the new user
+    user_id = users.insert_one({
+        "username": username,
+        "password": password,
+    }).inserted_id
+
+    return jsonify({"message": "User created successfully", "user_id": str(user_id)}), 201
+
+# Gets current standings
 @app.route('/api/mlb/standings', methods=['GET'])
 def get_mlb_standings():
     data = statsapi.standings_data()
     return data
 
+# Gets current status of today's games
 @app.route('/api/mlb/scores', methods=['GET'])
 def get_mlb_scores():
     games = statsapi.schedule(date=today.strftime('%m/%d/%Y'))
     return games
 
+# Gets stat leaders of various stats
 @app.route('/api/mlb/stats', methods=['GET'])
 def get_mlb_stats():
     stats = {}
