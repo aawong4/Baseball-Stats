@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0 0 3px lightgrey;
+  background-color: white;
+  padding: 10px;
+  font-size: 15px;
+  width: 40%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contentContainer {
+  width: 60%;
+}
+
+input {
+  border: 1px gray solid;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+button {
+  background-color: #041e42;
+  color: white;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
