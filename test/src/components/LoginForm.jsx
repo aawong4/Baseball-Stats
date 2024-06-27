@@ -42,7 +42,7 @@ const LoginForm = () => {
             />
           </div>
           <div style={{ height: 20 }} />
-          <button type="submit">Register</button>
+          <button type="submit">Login</button>
           <p>Don't have an account? Sign Up</p>
         </form>
       </div>
