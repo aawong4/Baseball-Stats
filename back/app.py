@@ -33,6 +33,22 @@ def register():
 
     return jsonify({"message": "User created successfully", "user_id": str(user_id)}), 201
 
+# User authentication at login
+@app.route('/api/login', methods=["GET", "POST"])
+def login():
+    # Obtain user data from front
+    data = request.get_json()
+    username = data.get("username")
+    password = data.get("password")
+
+    # Get user document by username
+    user_doc = users.find_one({"username": username})
+
+    if password == user_doc.get("password"):
+        return jsonify({"message": "True"}), 201
+    return jsonify({"message", "False"}), 201
+    
+
 # Gets current standings
 @app.route('/api/mlb/standings', methods=['GET'])
 def get_mlb_standings():

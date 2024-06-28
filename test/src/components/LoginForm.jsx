@@ -5,18 +5,18 @@ import styles from "./LoginForm.module.css";
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/register", {
+      const response = await axios.post("http://localhost:5000/api/login", {
         username,
         password,
       });
-      setMessage(response.data.message);
+      setLoggedIn(response.data.message == "True");
     } catch (error) {
-      setMessage(error.response.data.error);
+      setLoggedIn(false);
     }
   };
   return (
@@ -44,6 +44,7 @@ const LoginForm = () => {
           <div style={{ height: 20 }} />
           <button type="submit">Login</button>
           <p>Don't have an account? Sign Up</p>
+          <p>{loggedIn ? "Logged In" : ""}</p>
         </form>
       </div>
     </div>
