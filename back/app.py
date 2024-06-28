@@ -44,9 +44,15 @@ def login():
     # Get user document by username
     user_doc = users.find_one({"username": username})
 
-    if password == user_doc.get("password"):
-        return jsonify({"message": "True"}), 201
-    return jsonify({"message", "False"}), 201
+    # Compare input password to user password
+    if user_doc:
+        if password == user_doc.get("password"):
+            return jsonify({"message": "Logged in!"}), 201
+        else:
+            return jsonify({"message": "Incorrect password"}), 201
+    else:
+        return jsonify({"message": "User not found"}), 201
+    
     
 
 # Gets current standings

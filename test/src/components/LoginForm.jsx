@@ -5,7 +5,7 @@ import styles from "./LoginForm.module.css";
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,9 +14,9 @@ const LoginForm = () => {
         username,
         password,
       });
-      setLoggedIn(response.data.message == "True");
+      setMessage(response.data.message);
     } catch (error) {
-      setLoggedIn(false);
+      setLoggedIn(error.data.message);
     }
   };
   return (
@@ -44,7 +44,7 @@ const LoginForm = () => {
           <div style={{ height: 20 }} />
           <button type="submit">Login</button>
           <p>Don't have an account? Sign Up</p>
-          <p>{loggedIn ? "Logged In" : ""}</p>
+          <p>{message}</p>
         </form>
       </div>
     </div>
