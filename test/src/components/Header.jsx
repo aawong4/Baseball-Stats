@@ -14,7 +14,7 @@ const Header = () => {
       <nav>
         <Link to="schedule">Schedule</Link>
       </nav>
-      <nav class="right">
+      <nav className={styles.right}>
         <Link to="login">Login</Link>
       </nav>
     </div>
