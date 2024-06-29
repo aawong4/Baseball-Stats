@@ -32,3 +32,16 @@ button {
   cursor: pointer;
   width: 100%;
 }
+
+.blacktext {
+  color: black;
+}
+
+.signup {
+  display: flex;
+  align-items: center;
+}
+
+.signup > p {
+  margin-right: 3px;
+}
