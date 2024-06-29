@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import styles from "./LoginForm.module.css";
+import styles from "./Form.module.css";
 import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,10 +14,7 @@ const LoginForm = () => {
         username,
         password,
       });
-      setMessage(response.data.message);
-    } catch (error) {
-      setLoggedIn(error.data.message);
-    }
+    } catch (error) {}
   };
   return (
     <div className={styles.container}>
@@ -44,7 +40,6 @@ const LoginForm = () => {
           </div>
           <div style={{ height: 20 }} />
           <button type="submit">Login</button>
-          <p>{message}</p>
         </form>
         <div className={styles.signup}>
           <p>Don't have an account?</p>

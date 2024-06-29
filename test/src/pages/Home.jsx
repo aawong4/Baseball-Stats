@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import LeagueStanding from "../components/LeagueStanding";
-import PitchingStatLeaders from "../components/PitchingStatLeaders";
-import HittingStatLeaders from "../components/HittingStatLeaders";
-import Schedule from "../components/Schedule";
+import LeagueStanding from "../components/Standings/LeagueStanding";
+import PitchingStatLeaders from "../components/Player Stats/PitchingStatLeaders";
+import HittingStatLeaders from "../components/Player Stats/HittingStatLeaders";
+import Schedule from "../components/Schedule/Schedule";
 import styles from "./Home.module.css";
 
 function Home() {
